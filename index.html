@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Prueba Js</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  </head>
+  <body>
+      <main>
+          <h1 class="text-center p-3">Ejercicios de repaso js</h1>
+          <nav>
+              <ul>
+                  <li>Crear un Crud usando una clase para los tres metodos de creación, actualización y eliminación, usar bootstrap, utiliza delegación de eventos</li>
+                  <li>Dado el arreglo "Data" de objetos crea una barra de busqueda que muestre los usuarios encontrados conforme vayan escribiendo y dando enter en  el input</li>
+                  <div class="contenido w-50 mx-auto p-4">
+                    <input type="text" name="buscar" class="form-control buscar" id="buscar"/>
+                  </div>
+                  <div class="contenido-busqueda"></div>
+
+                  <li>Crear un minijuego donde el objeto salte cada vez que le pasemos el mouse por encima y cuente los puntos realizados</li>
+                  <li>Cree una minilibrería llamada jjs que contenga 3 nuevas formas de seleccionar elementos, id => jid, name => jn, className => jc, y que tenga una función llamada crear header, que nos va a pedir de parametro un titulo, el color del titulo, una imagen y un texto para un botón, contenedor padre  </li>
+              </ul>
+          </nav>
+      </main>
+      <script src="jjs.js"></script>
+       
+      <script>
+        
+        console.log('Jj :>> ', Jid("buscar"));
+        console.log('Jc :>> ', Jc("buscar"));
+        console.log('Jn :>> ', Jn("buscar"));
+
+
+       let Data = [{nombre:'david', apellido:'tello', edad:'23'},{nombre:'jose',apellido:'torres', edad:'30'},{nombre:'maria',apellido:'perez',edad:'20'}];
+       
+       document.getElementById("buscar").addEventListener("change",function(e){
+           let aux = e.target.value;
+           console.log('aux :>> ', aux);
+           let count = 0;
+           Data.forEach(element => {
+                  if(element.nombre.indexOf(aux) !== -1 || element.apellido.indexOf(aux) !== -1){
+                    console.log(element);
+                    count = count + 1;
+                  }else{
+
+                  }
+           });
+           if (count<=0) {
+              console.log('Usuario no existe :>> ');
+           }
+
+       });
+
+
+      </script>
+  </body>
+</html>

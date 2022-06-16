@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>CONTROL</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+      <header class="text-center p-3">
+          <h1>CONTROL</h1>
+      </header>
+      <main>
+            <section class="text-center">
+                <button class="btn btn-primary fa-solid fa-1" data-bs-toggle="modal" data-bs-target="#modal1"></button>
+                <button class="btn btn-success fa-solid fa-2" data-bs-toggle="modal" data-bs-target="#modal2" disabled ></button>
+                <button class="btn btn-danger fa-solid fa-3"  data-bs-toggle="modal" data-bs-target="#modal3" disabled ></button>
+            </section>
+            <section>
+                <div class="modal-1">
+                <!-- Modal -->
+                <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal 1</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="tareas">
+                                <form action="">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Escriba su meta ..." id="meta">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Escriba su nombre ..." id="nombre">
+                                       
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <button type="button" class="btn btn-primary formulario1">OK</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                </div>
+                <div class="modal-2">
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal 2</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <p class="fst-italic">Yo soy <span class="text-warning" id="nombres"></span> y voy a <span id="metas" class="text-warning"></span> </p>
+                                    <form action="">
+                                        <div class="mb-3">
+                                            <label for="" class="label-control mb-3">Los lenguajes que estoy aprendiendo son...</label>
+                                            <input type="text" class="form-control lenguajes" placeholder="Escriba los lenguajes ...">
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                            <button type="button" class="btn btn-primary formulario2">OK</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                    <div class="modal-1">
+                        <!-- Modal -->
+                        <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal 3</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="botones d-flex justify-content-around">
+
+                                        <button class="btn btn-primary d-block w-25 si">Si</button>
+                                        <button class="btn btn-secondary d-block w-25 no">No</button>
+                                    </div>
+                                    <div class="respuesta pb-3" id="respuesta"></div>
+                                </div>
+                                <!-- <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">OK</button>
+                                </div> -->
+                            </div>
+                            </div>
+                        </div>
+                        
+                        </div>
+            </section>
+      </main>
+      <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script>
+        let meta ="", nombre="", lenguajes="";
+        // Aplique delegación de eventos
+            document.addEventListener("click", () =>{
+                if(e.target.classList.contains("formulario1")){
+                    meta = document.getElementById("meta");
+                    nombre = document.getElementById("nombre");
+                    if(meta == "" && nombre == ""){
+                        alert("Debe responder antes de continuar :)")
+                    }else{
+                        // Verifique en que etiqueta irá la información
+                        console.log(meta,nombre);
+                        document.getElementById("nombres").value = nombre;
+                        document.getElementById("metas").value = meta;
+                        console.log('object :>> ', document.querySelector(".fa-1"));
+                        // Por defecto los botones 2 y 3 están desactivados, cuando se cumple la contición la propiedad disable cambia a folse y se habilitan
+                        document.querySelector(".fa-2").disabled = false;
+                        alert("Excelente " + nombre);   
+                    }
+                }
+                //Revise los disparadores
+                if(e.target.classList.contains("formulario2")){
+                    lenguajes = document.querySelector("lenguajes");
+                    if(lenguajes == ""){
+                        alert("Debe responder antes de continuar :)")
+                    }else{ 
+                        alert("Muy bien");
+                        console.log('lenguajes :>> ', lenguajes);
+                        document.querySelector(".fa").disabled = true;
+
+                    }
+                }
+
+                if(e.target.classList.contains("si")){
+                    let div = document.createElement("div");
+                    div.innerHTML = `
+                        <img src="https://cdn-icons-png.flaticon.com/512/390/390887.png" / class="w-25 d-block mx-auto mb-3 mt-3" >
+
+                        <h2 class="text-center text-primary fst-italic">Se certifica al señor: ${nombre} como programador web debido a que cumplio su meta de ${meta}, obteniendo el dominio de los lenguajes ${lenguajes}</h2>
+                    `;
+                    document.querySelector("#respuesta").innerHTML="";
+                    
+
+                }
+                if(e.target.classList.contains("no")){
+                    console.log('no :>> '); 
+                    let div = document.createElement("div");
+                    div.innerHTML = `
+                        <img src="https://userscontent2.emaze.com/images/55a51533-5f9b-41ef-996c-d547a8eb9348/8a98b9eb40a7287b3a143b699e3317f6.png" / class="w-100 p-4" >
+
+                    `;
+                    
+                    document.querySelector("#respuesta").appendChild(div);
+                }
+
+            })
+
+
+    </script>
+  </body>
+</html>
